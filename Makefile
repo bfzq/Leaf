@@ -1,11 +1,11 @@
 img: 
 	make leaf.img
 
-ipl.bin: ipl2.s
-	nasm -f bin ipl2.s  -o ipl.bin -l ipl.lst
+leaf_ipl.bin: leaf_ipl.s
+	nasm -f bin leaf_ipl.s  -o leaf_ipl.bin -l leaf_ipl.lst
 
-leaf.img: ipl.bin
-	dd if=ipl.bin of=ipl.img
+leaf.img: leaf_ipl.bin
+	dd if=leaf_ipl.bin of=leaf.img
 
 clean:
 	rm -rf *.img *.bin
